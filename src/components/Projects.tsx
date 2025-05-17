@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { fadeIn, fadeInUp, staggerContainer } from './animations';
+import { useEffect } from 'react';
 
 const projects = [
   {
@@ -49,6 +50,14 @@ const projects = [
 ];
 
 export default function Projects() {
+  // Preload images
+  useEffect(() => {
+    projects.forEach(project => {
+      const img = new Image();
+      img.src = project.image.url;
+    });
+  }, []);
+
   return (
     <section id="projects" className="py-20 bg-transparent dark:bg-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +65,7 @@ export default function Projects() {
           variants={fadeIn}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           className="text-center mb-12"
         >
           <h2 className="section-heading dark:text-white">My Projects</h2>
@@ -70,7 +79,7 @@ export default function Projects() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
         >
           {projects.map((project) => (
@@ -84,6 +93,7 @@ export default function Projects() {
                   src={project.image.url}
                   alt={project.image.alt}
                   className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-200"
+                  loading="eager"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2 dark:text-white">{project.title}</h3>

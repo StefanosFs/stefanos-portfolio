@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { fadeIn, fadeInUp, staggerContainer } from './animations';
 
 const skills = [
   { name: 'React', level: 90 },
@@ -14,9 +15,9 @@ export default function About() {
     <section id="about" className="py-20 bg-transparent dark:bg-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
           className="text-center mb-12"
         >
@@ -27,12 +28,15 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        >
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            variants={fadeInUp}
             className="card"
           >
             <h3 className="text-2xl font-semibold mb-4 dark:text-white">Experience</h3>
@@ -44,10 +48,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            variants={fadeInUp}
             className="card"
           >
             <h3 className="text-2xl font-semibold mb-4 dark:text-white">Skills</h3>
@@ -68,7 +69,7 @@ export default function About() {
               ))}
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,36 +1,29 @@
 import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from './animations';
 
 export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-transparent dark:bg-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="text-center"
+        >
+          <motion.div variants={fadeInUp}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
               Hi, I'm <span className="text-blue-500">Stefanos Fessahaie</span>
             </h1>
           </motion.div>
           
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <motion.div variants={fadeInUp}>
             <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8">
               Front End Developer
             </h2>
           </motion.div>
           
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="space-x-4"
-          >
+          <motion.div variants={fadeInUp} className="space-x-4">
             <a
               href="#projects"
               className="btn-primary inline-block"
@@ -44,7 +37,7 @@ export default function Hero() {
               Contact Me
             </a>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

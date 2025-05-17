@@ -8,7 +8,7 @@ import Contact from './components/Contact';
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-primary transition-colors duration-200">
+      <div className="min-h-screen bg-transparent dark:bg-primary transition-colors duration-200">
         <Navbar />
         <main>
           <Hero />

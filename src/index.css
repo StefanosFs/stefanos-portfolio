@@ -16,7 +16,12 @@
 
 @layer base {
   body {
-    @apply bg-white text-gray-900 transition-colors duration-200;
+    @apply text-gray-900 transition-colors duration-200;
+    background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
   }
 
   .dark body {
@@ -38,7 +43,7 @@
   }
 
   .card {
-    @apply bg-white dark:bg-tertiary rounded-xl shadow-lg p-6 transition-all duration-300;
+    @apply bg-white/80 backdrop-blur-sm dark:bg-tertiary rounded-xl shadow-lg p-6 transition-all duration-300;
   }
 
   .card:hover {

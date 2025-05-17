@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 transition-colors duration-200;
+  }
+
+  .dark body {
+    @apply bg-primary text-white;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply cursor-pointer text-gray-900 dark:text-white transition-colors duration-200;
+  }
+
+  .nav-link:hover {
+    @apply text-blue-500;
+  }
+
+  .section-heading {
+    @apply text-4xl font-bold mb-8 text-center text-gray-900 dark:text-white;
+  }
+
+  .card {
+    @apply bg-white dark:bg-tertiary rounded-xl shadow-lg p-6 transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply shadow-xl;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-full bg-blue-600 text-white transition-colors duration-200;
+  }
+
+  .btn-primary:hover {
+    @apply bg-blue-700;
+  }
+}

@@ -34,7 +34,7 @@ const projects = [
     },
     tags: ['GitHub API', 'React', 'Tailwind CSS', 'JavaScript'],
     sourceCode: 'https://github.com/StefanosFs/github-profile-finder',
-    liveDemo: 'https://github-profile-finder-stefanofs.vercel.app/',
+    liveDemo: 'https://github-profile-finder-ten.vercel.app',
   },
   {
     title: 'Cursor AI Quote Generator',

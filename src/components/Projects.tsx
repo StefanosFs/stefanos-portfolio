@@ -12,7 +12,7 @@ const projects = [
     },
     tags: ['React', 'TypeScript', 'Material-UI', 'RapidAPI'],
     sourceCode: 'https://github.com/StefanosFs/gym-app-react',
-    liveDemo: 'https://gym-app-react-stefanofs.vercel.app/',
+    liveDemo: 'https://gym-app-react-eight.vercel.app',
   },
   {
     title: 'Meal API Project',
@@ -23,7 +23,7 @@ const projects = [
     },
     tags: ['React.js', 'API Integration', 'CSS3', 'JavaScript'],
     sourceCode: 'https://github.com/StefanosFs/meal-api-project-react.js',
-    liveDemo: 'https://meal-api-project-react-js.vercel.app/',
+    liveDemo: 'https://meal-api-project-react-js.vercel.app',
   },
   {
     title: 'GitHub Profile Finder',

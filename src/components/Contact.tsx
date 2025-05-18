@@ -1,27 +1,46 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const form = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted:', formData);
-  };
+    if (!form.current) return;
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    try {
+      setIsSubmitting(true);
+      setSubmitStatus({ type: null, message: '' });
+
+      const result = await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      if (result.text === 'OK') {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Message sent successfully! I will get back to you soon.',
+        });
+        form.current.reset();
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again later.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -42,6 +61,7 @@ export default function Contact() {
 
         <div className="max-w-3xl mx-auto">
           <motion.form
+            ref={form}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -51,17 +71,15 @@ export default function Contact() {
           >
             <div>
               <label
-                htmlFor="name"
+                htmlFor="user_name"
                 className="block text-sm font-medium text-gray-700 dark:text-gray-300"
               >
                 Name
               </label>
               <input
                 type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
+                id="user_name"
+                name="user_name"
                 required
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-tertiary dark:border-gray-600 dark:text-white"
               />
@@ -69,17 +87,15 @@ export default function Contact() {
 
             <div>
               <label
-                htmlFor="email"
+                htmlFor="user_email"
                 className="block text-sm font-medium text-gray-700 dark:text-gray-300"
               >
                 Email
               </label>
               <input
                 type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
+                id="user_email"
+                name="user_email"
                 required
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-tertiary dark:border-gray-600 dark:text-white"
               />
@@ -95,17 +111,33 @@ export default function Contact() {
               <textarea
                 id="message"
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
                 required
                 rows={4}
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-tertiary dark:border-gray-600 dark:text-white"
               />
             </div>
 
+            {submitStatus.message && (
+              <div
+                className={`p-4 rounded-md ${
+                  submitStatus.type === 'success'
+                    ? 'bg-green-50 text-green-800 dark:bg-green-900 dark:text-green-100'
+                    : 'bg-red-50 text-red-800 dark:bg-red-900 dark:text-red-100'
+                }`}
+              >
+                {submitStatus.message}
+              </div>
+            )}
+
             <div className="text-center">
-              <button type="submit" className="btn-primary">
-                Send Message
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`btn-primary ${
+                  isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+                }`}
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </div>
           </motion.form>

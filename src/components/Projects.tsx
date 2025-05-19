@@ -4,6 +4,17 @@ import { useEffect } from 'react';
 
 const projects = [
   {
+    title: 'GitHub Profile Finder',
+    description: 'An application that allows users to search and view GitHub profiles, displaying user information, repositories, and statistics.',
+    image: {
+      url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=GitHub+Profile+Finder',
+      alt: 'GitHub Profile Finder - Application interface displaying GitHub user profiles and statistics'
+    },
+    tags: ['GitHub API', 'React', 'Tailwind CSS', 'JavaScript'],
+    sourceCode: 'https://github.com/StefanosFs/github-profile-finder',
+    liveDemo: 'https://git-hub-profile-finder-flame.vercel.app',
+  }, 
+  {
     title: 'Gym App React',
     description: 'A comprehensive fitness application built with React, featuring workout tracking, exercise library, and personalized routines.',
     image: {
@@ -26,16 +37,16 @@ const projects = [
     liveDemo: 'https://meal-api-project-react-js.vercel.app',
   },
   {
-    title: 'GitHub Profile Finder',
-    description: 'An application that allows users to search and view GitHub profiles, displaying user information, repositories, and statistics.',
+    title: 'Random Password Generator',
+    description: 'A simple tool that generates random passwords of varying lengths and complexity.',
     image: {
-      url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=GitHub+Profile+Finder',
-      alt: 'GitHub Profile Finder - Application interface displaying GitHub user profiles and statistics'
+      url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Password+Generator',
+      alt: 'Random Password Generator - Simple password generator interface'
     },
-    tags: ['GitHub API', 'React', 'Tailwind CSS', 'JavaScript'],
-    sourceCode: 'https://github.com/StefanosFs/github-profile-finder',
-    liveDemo: 'https://git-hub-profile-finder-flame.vercel.app',
-  }, 
+    tags: ['React.js', 'CSS3', 'JavaScript'],
+    sourceCode: 'https://github.com/StefanosFs/random-password-generator',
+    liveDemo: 'https://random-password-generator-js-eta.vercel.app/'
+  },
 ];
 
 export default function Projects() {
@@ -112,7 +123,6 @@ export default function Projects() {
                 {project.liveDemo && (
                   <a
                     href={project.liveDemo}
-                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 flex items-center"
                   >

@@ -7,36 +7,31 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-// Initialize dark mode in localStorage if not set
-if (typeof window !== 'undefined') {
-  const storedPreference = localStorage.getItem('darkMode');
-  if (storedPreference === null) {
-    localStorage.setItem('darkMode', 'true');
-    document.documentElement.classList.add('dark');
-  } else if (storedPreference === 'true') {
-    document.documentElement.classList.add('dark');
-  }
-}
-
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  // Initialize with dark mode
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('darkMode');
-      return stored === null ? true : stored === 'true';
-    }
-    return true;
-  });
+  const [darkMode, setDarkMode] = useState(true); // Default to dark mode
 
   useEffect(() => {
-    // Apply dark mode class
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
+    // Only run in browser
+    if (typeof window !== 'undefined') {
+      // Get initial theme from localStorage or system preference
+      const storedPreference = localStorage.getItem('darkMode');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      const initialTheme = storedPreference === null ? prefersDark : storedPreference === 'true';
+      setDarkMode(initialTheme);
     }
-    // Store preference
-    localStorage.setItem('darkMode', String(darkMode));
+  }, []);
+
+  useEffect(() => {
+    // Only run in browser
+    if (typeof window !== 'undefined') {
+      if (darkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      localStorage.setItem('darkMode', String(darkMode));
+    }
   }, [darkMode]);
 
   const toggleDarkMode = () => {

@@ -35,18 +35,7 @@ const projects = [
     tags: ['GitHub API', 'React', 'Tailwind CSS', 'JavaScript'],
     sourceCode: 'https://github.com/StefanosFs/github-profile-finder',
     liveDemo: 'https://git-hub-profile-finder-flame.vercel.app',
-  },
-  {
-    title: 'Cursor AI Quote Generator',
-    description: 'A dynamic quote generator built with Cursor AI integration, providing users with inspirational and thought-provoking quotes.',
-    image: {
-      url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Quote+Generator',
-      alt: 'Cursor AI Quote Generator - Clean interface showing inspirational quotes'
-    },
-    tags: ['AI Integration', 'React', 'API', 'CSS3'],
-    sourceCode: 'https://github.com/StefanosFs/cursor-ai-quote-generator',
-    liveDemo: 'https://cursor-ai-quote-generator.vercel.app/',
-  },
+  }, 
 ];
 
 export default function Projects() {

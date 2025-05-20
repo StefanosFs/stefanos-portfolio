@@ -47,6 +47,28 @@ const projects = [
     sourceCode: 'https://github.com/StefanosFs/random-password-generator',
     liveDemo: 'https://random-password-generator-js-eta.vercel.app/'
   },
+  {
+    title: 'Nasa React App',
+    description: "An interactive tool that fetches NASA's Image of the Day using their public API, featuring detailed explanations, high-res images, and date-based search.",
+    image: {
+      url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Nasa+React+App',
+      alt: 'Nasa React App - NASA Image of the Day interface'
+    },
+    tags: ['React.js', 'CSS3', 'JavaScript', 'NASA API'],
+    sourceCode: 'https://github.com/StefanosFs/nasa-react-app',
+    liveDemo: 'https://nasa-react-app-roan.vercel.app/'
+  },
+  {
+    title: 'Tip Calculator',
+    description: 'A responsive tip calculator that calculates tips based on bill amount and service quality, featuring real-time updates and customizable tip percentages.',
+    image: {
+      url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Tip+Calculator',
+      alt: 'Tip Calculator - Simple tip calculator interface'
+    },
+    tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
+    sourceCode: 'https://github.com/StefanosFs/Tip-Calculator',
+    liveDemo: 'https://tip-calculator-gd8c.vercel.app/'
+  },
 ];
 
 export default function Projects() {

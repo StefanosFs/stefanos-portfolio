@@ -57,7 +57,7 @@ export default function Contact() {
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Have a question or want to work together? Feel free to reach out!
             <br />
-            The contact form is currently under construction. In the meantime, feel free to reach out directly at stefanosfs07@gmail.com
+            The contact form is currently under construction. In the meantime, feel free to reach out directly at stef07codes@gmail.com
           </p>
         </motion.div>
 
@@ -153,7 +153,7 @@ export default function Contact() {
           >
             <div className="flex justify-center space-x-6">
               <a
-                href="https:/github.com/StefanosFs"
+                href="https://github.com/StefanosFs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"

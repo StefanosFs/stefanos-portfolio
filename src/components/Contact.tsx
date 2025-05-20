@@ -1,14 +1,14 @@
-import { motion } from 'framer-motion';
-import { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const form = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
-    type: 'success' | 'error' | null;
+    type: "success" | "error" | null;
     message: string;
-  }>({ type: null, message: '' });
+  }>({ type: null, message: "" });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ export default function Contact() {
 
     try {
       setIsSubmitting(true);
-      setSubmitStatus({ type: null, message: '' });
+      setSubmitStatus({ type: null, message: "" });
 
       const result = await emailjs.sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -25,18 +25,18 @@ export default function Contact() {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
-      if (result.text === 'OK') {
+      if (result.text === "OK") {
         setSubmitStatus({
-          type: 'success',
-          message: 'Message sent successfully! I will get back to you soon.',
+          type: "success",
+          message: "Message sent successfully! I will get back to you soon.",
         });
         form.current.reset();
       }
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error("Error sending email:", error);
       setSubmitStatus({
-        type: 'error',
-        message: 'Failed to send message. Please try again later.',
+        type: "error",
+        message: "Failed to send message. Please try again later.",
       });
     } finally {
       setIsSubmitting(false);
@@ -57,7 +57,9 @@ export default function Contact() {
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Have a question or want to work together? Feel free to reach out!
             <br />
-            The contact form is currently under construction. In the meantime, feel free to reach out directly at stef07codes@gmail.com
+            The contact form is currently under construction. In the meantime,
+            feel free to reach out directly at {""}
+            <a href="mailto:stef07codes@gmail.com"> <span className="text-blue-400 hover:text-blue-600">stef07codes@gmail.com</span></a>
           </p>
         </motion.div>
 
@@ -122,9 +124,9 @@ export default function Contact() {
             {submitStatus.message && (
               <div
                 className={`p-4 rounded-md ${
-                  submitStatus.type === 'success'
-                    ? 'bg-green-50 text-green-800 dark:bg-green-900 dark:text-green-100'
-                    : 'bg-red-50 text-red-800 dark:bg-red-900 dark:text-red-100'
+                  submitStatus.type === "success"
+                    ? "bg-green-50 text-green-800 dark:bg-green-900 dark:text-green-100"
+                    : "bg-red-50 text-red-800 dark:bg-red-900 dark:text-red-100"
                 }`}
               >
                 {submitStatus.message}
@@ -136,10 +138,10 @@ export default function Contact() {
                 type="submit"
                 disabled={isSubmitting}
                 className={`btn-primary ${
-                  isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+                  isSubmitting ? "opacity-75 cursor-not-allowed" : ""
                 }`}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </div>
           </motion.form>
@@ -180,4 +182,4 @@ export default function Contact() {
       </div>
     </section>
   );
-} 
+}

@@ -38,7 +38,7 @@ const projects = [
   },
   {
     title: 'Random Password Generator',
-    description: 'A simple tool that generates random passwords of varying lengths and complexity.',
+    description: 'A simple tool that generates random passwords of varying lengths and complexity, featuring customizable options and instant clipboard support.',
     image: {
       url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Password+Generator',
       alt: 'Random Password Generator - Simple password generator interface'
@@ -123,6 +123,7 @@ export default function Projects() {
                 {project.liveDemo && (
                   <a
                     href={project.liveDemo}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 flex items-center"
                   >

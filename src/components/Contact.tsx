@@ -56,10 +56,6 @@ export default function Contact() {
           <h2 className="section-heading dark:text-white">Get In Touch</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Have a question or want to work together? Feel free to reach out!
-            <br />
-            The contact form is currently under construction. In the meantime,
-            feel free to reach out directly at {""}
-            <a href="mailto:stef07codes@gmail.com"> <span className="text-blue-400 hover:text-blue-600">stef07codes@gmail.com</span></a>
           </p>
         </motion.div>
 

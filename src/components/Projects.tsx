@@ -26,10 +26,10 @@ const projects = [
     liveDemo: 'https://gym-app-react-eight.vercel.app',
   },
   {
-    title: 'Meal API Project',
+    title: 'Meal App Live',
     description: 'A recipe discovery application that leverages a meal API to provide users with recipes, ingredients, and cooking instructions.',
     image: {
-      url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Meal+API+Project',
+      url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Meal+App+Live',
       alt: 'Meal API Project - Recipe discovery application showing various dishes and ingredients'
     },
     tags: ['React.js', 'API Integration', 'CSS3', 'JavaScript'],

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-scroll';
 import { SunIcon, MoonIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useTheme } from '../context/ThemeContext';
+import logo from '../assets/sf-logo.png'
 
 const navLinks = [
   { name: 'Home', to: 'home' },
@@ -19,7 +20,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Portfolio</h1>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white"><img 
+            src={logo} 
+            alt="logo"
+            className="h-16 w-16 rounded-full object-cover shadow-md pt-3"
+            /></h1>
           </div>
           
           {/* Desktop menu */}

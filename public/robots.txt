@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stefanos-portfolio.vercel.app/sitemap.xml 

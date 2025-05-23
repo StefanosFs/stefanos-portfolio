@@ -33,8 +33,41 @@ const styles = `
   }
 }
 
+@keyframes lightSweep {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
 .dark .logo-glow {
   animation: glow 3s ease-in-out infinite;
+}
+
+.dark .logo-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .logo-sweep::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: lightSweep 2s ease-in-out infinite;
+  pointer-events: none;
+  border-radius: 50%;
 }
 
 .logo-float {
@@ -154,7 +187,7 @@ export default function Navbar() {
                   alt="logo"
                   className={`h-16 w-16 rounded-[50%] object-cover bg-white dark:bg-primary p-1 transition-all duration-300 will-change-transform ${
                     isLoaded ? 'logo-coin' : ''
-                  } ${darkMode ? 'logo-glow' : ''} hover:scale-110`}
+                  } ${darkMode ? 'logo-glow logo-sweep' : ''} hover:scale-110`}
                 />
               </h1>
             </div>

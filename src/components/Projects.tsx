@@ -4,6 +4,17 @@ import { useEffect } from 'react';
 
 const projects = [
   {
+    title: 'Airbnb Clone',
+    description: 'A responsive Airbnb clone landing page built with modern UI design with interactive elements that closely mirror the original platform\'s aesthetic.',
+    image: {
+      url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Airbnb+Clone',
+      alt: 'Airbnb Clone - Modern landing page with responsive design and interactive elements'
+    },
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Modern UI'],
+    sourceCode: 'https://github.com/StefanosFs/Airbnb-Clone',
+    liveDemo: 'https://airbnb-clone-seven-neon.vercel.app/',
+  },
+  {
     title: 'GitHub Profile Finder',
     description: 'An application that allows users to search and view GitHub profiles, displaying user information, repositories, and statistics.',
     image: {
@@ -65,7 +76,7 @@ const projects = [
       url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Tip+Calculator',
       alt: 'Tip Calculator - Simple tip calculator interface'
     },
-    tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Modern UI'],
     sourceCode: 'https://github.com/StefanosFs/Tip-Calculator',
     liveDemo: 'https://tip-calculator-gd8c.vercel.app/'
   },

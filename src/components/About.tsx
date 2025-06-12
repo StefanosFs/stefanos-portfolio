@@ -4,10 +4,12 @@ import { fadeIn, fadeInUp, staggerContainer } from "./animations";
 const skills = [
   { name: "React", level: 90 },
   { name: "TypeScript", level: 85 },
-  { name: "Node.js", level: 80 },
   { name: "JavaScript", level: 75 },
+  { name: "Node.js", level: 80 },
+  { name: "Python", level: 75 },
   { name: "SQL", level: 85 },
   { name: "AWS", level: 70 },
+  { name: "Git", level: 80 },
 ];
 
 export default function About() {
@@ -42,7 +44,12 @@ export default function About() {
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
               With over 2 years of experience in software development, I've
-              worked on various projects ranging from e-commerce platforms to
+              worked on various projects ranging from e-commerce platforms   
+              <br />
+              such as <a href="https://warmlydecor.store" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">warmlydecor.store</a>
+              <br /> 
+              a full-featured modern online store 
+              built with performance and user experience in mind, to
               enterprise applications. I focus on writing clean, maintainable
               code and building user-friendly interfaces.
               <br />

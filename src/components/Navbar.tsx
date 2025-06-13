@@ -7,7 +7,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { useTheme } from "../context/ThemeContext";
-import logo from "../assets/sf-logo2.png";
+import logo from "../assets/sf-logotwo.png";
 
 // Add custom animation keyframes at the top level
 const styles = `

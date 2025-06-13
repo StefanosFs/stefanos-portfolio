@@ -43,16 +43,16 @@ export default function About() {
               Experience
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              With over 2 years of experience in software development, I've
-              worked on various projects ranging from e-commerce platforms   
+              With over two years of software development experience, I have honed my skills through extensive self-study, practical application, and certified coursework, contributing to a variety of projects, including e-commerce platforms
               <br />
               such as <a href="https://warmlydecor.store" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">warmlydecor.store</a>
               <br /> 
               a full-featured modern online store 
               built with performance and user experience in mind, to
-              enterprise applications. I focus on writing clean, maintainable
-              code and building user-friendly interfaces.
-              <br />
+              enterprise applications.
+              <br /> 
+              I'm passionate about crafting elegant digital experiences through clean code and intuitive design. When I step away from the keyboard, you'll find me at the gym, lost in a good book, or experimenting in the kitchen.
+              <br /> 
               This website serves as
               a portfolio of my work and a journal of my career as a developer.
               Feel free to explore. It will be updated from time to time as I

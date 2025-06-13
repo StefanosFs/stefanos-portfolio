@@ -1,8 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-scroll';
-import { SunIcon, MoonIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { useTheme } from '../context/ThemeContext';
-import logo from '../assets/sf-logo.png'
+import { useState, useEffect, useRef } from "react";
+import { Link } from "react-scroll";
+import {
+  SunIcon,
+  MoonIcon,
+  Bars3Icon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import { useTheme } from "../context/ThemeContext";
+import logo from "../assets/sf-logo2.png";
 
 // Add custom animation keyframes at the top level
 const styles = `
@@ -131,10 +136,10 @@ const styles = `
 `;
 
 const navLinks = [
-  { name: 'Home', to: 'home' },
-  { name: 'About', to: 'about' },
-  { name: 'Projects', to: 'projects' },
-  { name: 'Contact', to: 'contact' },
+  { name: "Home", to: "home" },
+  { name: "About", to: "about" },
+  { name: "Projects", to: "projects" },
+  { name: "Contact", to: "contact" },
 ];
 
 export default function Navbar() {
@@ -149,24 +154,25 @@ export default function Navbar() {
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!logoRef.current) return;
-    
+
     const logo = logoRef.current;
     const rect = logo.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
+
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    
+
     const rotateX = (y - centerY) / 10;
     const rotateY = (centerX - x) / 10;
-    
+
     logo.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
   };
 
   const handleMouseLeave = () => {
     if (!logoRef.current) return;
-    logoRef.current.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+    logoRef.current.style.transform =
+      "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
   };
 
   return (
@@ -175,24 +181,24 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <style>{styles}</style>
-            <div 
+            <div
               className="logo-container"
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
             >
               <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-                <img 
+                <img
                   ref={logoRef}
-                  src={logo} 
+                  src={logo}
                   alt="logo"
                   className={`h-16 w-16 rounded-[50%] object-cover bg-white dark:bg-primary p-1 transition-all duration-300 will-change-transform ${
-                    isLoaded ? 'logo-coin' : ''
-                  } ${darkMode ? 'logo-glow logo-sweep' : ''} hover:scale-110`}
+                    isLoaded ? "logo-coin" : ""
+                  } ${darkMode ? "logo-glow logo-sweep" : ""} hover:scale-110`}
                 />
               </h1>
             </div>
           </div>
-          
+
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
@@ -261,11 +267,11 @@ export default function Navbar() {
               }}
               className="w-full text-left px-3 py-2 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-200"
             >
-              {darkMode ? 'Light Mode' : 'Dark Mode'}
+              {darkMode ? "Light Mode" : "Dark Mode"}
             </button>
           </div>
         </div>
       )}
     </nav>
   );
-} 
+}

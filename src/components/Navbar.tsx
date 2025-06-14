@@ -7,7 +7,14 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { useTheme } from "../context/ThemeContext";
-import logo from "../assets/sf-logo.png";
+
+// Try to import from assets first, fallback to public directory
+let logo: string;
+try {
+  logo = new URL("../assets/sf-new.avif", import.meta.url).href;
+} catch {
+  logo = "/logo.avif"; // Fallback to public directory
+}
 
 // Add custom animation keyframes at the top level
 const styles = `
@@ -139,6 +146,7 @@ const navLinks = [
   { name: "Home", to: "home" },
   { name: "About", to: "about" },
   { name: "Projects", to: "projects" },
+  { name: "Services", to: "services" },
   { name: "Contact", to: "contact" },
 ];
 
@@ -146,11 +154,17 @@ export default function Navbar() {
   const { darkMode, toggleDarkMode } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [logoError, setLogoError] = useState(false);
   const logoRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
+  const handleLogoError = () => {
+    setLogoError(true);
+    console.warn("Logo failed to load, using fallback");
+  };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!logoRef.current) return;
@@ -189,8 +203,9 @@ export default function Navbar() {
               <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
                 <img
                   ref={logoRef}
-                  src={logo}
+                  src={logoError ? "/logo.avif" : logo}
                   alt="logo"
+                  onError={handleLogoError}
                   className={`h-16 w-16 rounded-[50%] object-cover bg-white dark:bg-primary p-1 transition-all duration-300 will-change-transform ${
                     isLoaded ? "logo-coin" : ""
                   } ${darkMode ? "logo-glow logo-sweep" : ""} hover:scale-110`}

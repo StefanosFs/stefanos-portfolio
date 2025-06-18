@@ -25,7 +25,7 @@ export default function About() {
         >
           <h2 className="section-heading dark:text-white">About Me</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            I'm a passionate front end developer with experience in building
+            I'm a passionate Front-End Developer with experience building
             scalable web applications. I love learning new technologies and
             solving complex problems.
           </p>

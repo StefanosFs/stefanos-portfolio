@@ -1,16 +1,42 @@
+# Robots.txt for stefanosfessahaie.com
+# Last updated: December 19, 2024
+
+# Allow all crawlers
 User-agent: *
 Allow: /
+
+# Specific crawler optimizations
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
 
 # Disallow crawling of admin or private areas (if any)
 Disallow: /admin/
 Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
 
 # Allow crawling of important files
 Allow: /sitemap.xml
 Allow: /robots.txt
+Allow: /manifest.json
+Allow: /logo.avif
 
 # Sitemap location
 Sitemap: https://www.stefanosfessahaie.com/sitemap.xml
 
-# Crawl delay (optional - helps with server load)
-Crawl-delay: 1 
+# Additional sitemaps (if you add more in the future)
+# Sitemap: https://www.stefanosfessahaie.com/sitemap-images.xml
+# Sitemap: https://www.stefanosfessahaie.com/sitemap-blog.xml
+
+# Host directive (helps with canonicalization)
+Host: https://www.stefanosfessahaie.com 

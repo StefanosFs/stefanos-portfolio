@@ -19,7 +19,7 @@ export default function Hero() {
           
           <motion.div variants={fadeInUp}>
             <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8">
-              Full-Stack Developer & Software Engineer
+              Front-End Developer & Software Engineer
             </h2>
           </motion.div>
           

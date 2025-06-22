@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Logo Image -->
+  <url>
+    <loc>https://www.stefanosfessahaie.com/</loc>
+    <image:image>
+      <image:loc>https://www.stefanosfessahaie.com/logo.avif</image:loc>
+      <image:title>Stefanos Fessahaie - Full-Stack Developer Portfolio Logo</image:title>
+      <image:caption>Professional logo representing Stefanos Fessahaie's Full-Stack Development portfolio and brand identity</image:caption>
+      <image:license>https://www.stefanosfessahaie.com/terms</image:license>
+    </image:image>
+  </url>
+  
+  <!-- Favicon -->
+  <url>
+    <loc>https://www.stefanosfessahaie.com/</loc>
+    <image:image>
+      <image:loc>https://www.stefanosfessahaie.com/favicon.avif</image:loc>
+      <image:title>Stefanos Fessahaie Portfolio Favicon</image:title>
+      <image:caption>Favicon for Stefanos Fessahaie's professional portfolio website</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Profile Image -->
+  <url>
+    <loc>https://www.stefanosfessahaie.com/</loc>
+    <image:image>
+      <image:loc>https://www.stefanosfessahaie.com/src/assets/sf-new.avif</image:loc>
+      <image:title>Stefanos Fessahaie - Professional Headshot</image:title>
+      <image:caption>Professional headshot of Stefanos Fessahaie, Full-Stack Developer and Software Engineer</image:caption>
+    </image:image>
+  </url>
+</urlset> 

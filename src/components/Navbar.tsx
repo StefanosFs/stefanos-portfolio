@@ -204,7 +204,8 @@ export default function Navbar() {
                 <img
                   ref={logoRef}
                   src={logoError ? "/logo.avif" : logo}
-                  alt="logo"
+                  alt="Stefanos Fessahaie - Full-Stack Developer Portfolio Logo"
+                  title="Stefanos Fessahaie - Professional Full-Stack Developer"
                   onError={handleLogoError}
                   className={`h-16 w-16 rounded-[50%] object-cover bg-white dark:bg-primary p-1 transition-all duration-300 will-change-transform ${
                     isLoaded ? "logo-coin" : ""

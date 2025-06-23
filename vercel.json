@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "https://stefanos-portfolio.vercel.app/:path*",
+      "destination": "https://stefanosfessahaie.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },

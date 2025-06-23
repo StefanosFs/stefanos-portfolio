@@ -1,9 +1,15 @@
 {
   "redirects": [
     {
-      "source": "https://stefanos-portfolio.vercel.app/:path*",
-      "destination": "https://stefanosfessahaie.com/:path*",
-      "permanent": true
+      "source": "/(.*)",
+      "destination": "https://stefanosfessahaie.com/$1",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "stefanos-portfolio.vercel.app"
+        }
+      ]
     }
   ],
   "rewrites": [

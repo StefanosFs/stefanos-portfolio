@@ -55,7 +55,7 @@ export default function Contact() {
         >
           <h2 className="section-heading dark:text-white">Get In Touch</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Have a question or want to work together? Feel free to reach out!
+            Have a question or want to work together? Feel free to use the form below or email me directly at <a href="https://stef07codes@gmail.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">stef07codes@gmail.com</a> !
           </p>
         </motion.div>
 

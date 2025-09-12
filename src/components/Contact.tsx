@@ -18,12 +18,25 @@ export default function Contact() {
       setIsSubmitting(true);
       setSubmitStatus({ type: null, message: "" });
 
+      // Check if EmailJS credentials are configured
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS credentials are not configured. Please check your environment variables.");
+      }
+
+      console.log("Sending email with:", { serviceId, templateId, publicKey: publicKey.substring(0, 10) + "..." });
+
       const result = await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         form.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        publicKey
       );
+
+      console.log("EmailJS result:", result);
 
       if (result.text === "OK") {
         setSubmitStatus({
@@ -31,12 +44,29 @@ export default function Contact() {
           message: "Message sent successfully! I will get back to you soon.",
         });
         form.current.reset();
+      } else {
+        throw new Error(`EmailJS returned: ${result.text}`);
       }
     } catch (error) {
       console.error("Error sending email:", error);
+      
+      let errorMessage = "Failed to send message. Please try again later.";
+      
+      if (error instanceof Error) {
+        if (error.message.includes("credentials are not configured")) {
+          errorMessage = "Email service is not configured. Please contact me directly at stef07codes@gmail.com";
+        } else if (error.message.includes("Invalid template")) {
+          errorMessage = "Email template error. Please contact me directly at stef07codes@gmail.com";
+        } else if (error.message.includes("Invalid service")) {
+          errorMessage = "Email service error. Please contact me directly at stef07codes@gmail.com";
+        } else {
+          errorMessage = `Error: ${error.message}`;
+        }
+      }
+      
       setSubmitStatus({
         type: "error",
-        message: "Failed to send message. Please try again later.",
+        message: errorMessage,
       });
     } finally {
       setIsSubmitting(false);

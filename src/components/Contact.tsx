@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { emailjsConfig } from "../config/emailjs";
 
 export default function Contact() {
   const form = useRef<HTMLFormElement>(null);
@@ -19,15 +20,37 @@ export default function Contact() {
       setSubmitStatus({ type: null, message: "" });
 
       // Check if EmailJS credentials are configured
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || emailjsConfig.serviceId;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || emailjsConfig.templateId;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || emailjsConfig.publicKey;
 
-      if (!serviceId || !templateId || !publicKey) {
-        throw new Error("EmailJS credentials are not configured. Please check your environment variables.");
+      if (!serviceId || !templateId || !publicKey || 
+          serviceId === 'service_placeholder' || 
+          templateId === 'template_placeholder' || 
+          publicKey === 'public_key_placeholder') {
+        // Fallback: Create a mailto link with form data
+        const formData = new FormData(form.current);
+        const name = formData.get('user_name') as string;
+        const email = formData.get('user_email') as string;
+        const message = formData.get('message') as string;
+        
+        const subject = encodeURIComponent(`Contact Form Message from ${name}`);
+        const body = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+        );
+        
+        const mailtoLink = `mailto:stef07codes@gmail.com?subject=${subject}&body=${body}`;
+        window.open(mailtoLink, '_blank');
+        
+        setSubmitStatus({
+          type: "success",
+          message: "Opening your email client to send the message. If it doesn't open, please email me directly at stef07codes@gmail.com",
+        });
+        form.current.reset();
+        return;
       }
 
-      console.log("Sending email with:", { serviceId, templateId, publicKey: publicKey.substring(0, 10) + "..." });
+      console.log("Sending email with:", { serviceId, templateId, publicKey: publicKey ? publicKey.substring(0, 10) + "..." : "undefined" });
 
       const result = await emailjs.sendForm(
         serviceId,

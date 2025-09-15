@@ -86,7 +86,7 @@ export default function Contact() {
       
       if (error instanceof Error) {
         if (error.message.includes("Failed to fetch")) {
-          errorMessage = "Network error. This might be a CORS issue. Please check your EmailJS domain settings or contact me directly at stef07codes@gmail.com";
+          errorMessage = "Network error please contact me directly at stef07codes@gmail.com";
         } else if (error.message.includes("credentials are not configured")) {
           errorMessage = "Email service is not configured. Please contact me directly at stef07codes@gmail.com";
         } else if (error.message.includes("Invalid template")) {
@@ -186,7 +186,7 @@ export default function Contact() {
                 className={`p-4 rounded-md ${
                   submitStatus.type === "success"
                     ? "bg-green-50 text-green-800 dark:bg-green-900 dark:text-green-100"
-                    : "bg-red-50 text-red-800 dark:bg-red-900 dark:text-red-100"
+                    : "bg-green-50 text-green-800 dark:bg-green-900 dark:text-green-100"
                 }`}
               >
                 {submitStatus.message}

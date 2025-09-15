@@ -50,7 +50,16 @@ export default function Contact() {
         return;
       }
 
-      console.log("Sending email with:", { serviceId, templateId, publicKey: publicKey ? publicKey.substring(0, 10) + "..." : "undefined" });
+      console.log("Sending email with:", { 
+        serviceId, 
+        templateId, 
+        publicKey: publicKey ? publicKey.substring(0, 10) + "..." : "undefined",
+        hasEnvVars: {
+          serviceId: !!import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          templateId: !!import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          publicKey: !!import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        }
+      });
 
       const result = await emailjs.sendForm(
         serviceId,
@@ -76,7 +85,9 @@ export default function Contact() {
       let errorMessage = "Failed to send message. Please try again later.";
       
       if (error instanceof Error) {
-        if (error.message.includes("credentials are not configured")) {
+        if (error.message.includes("Failed to fetch")) {
+          errorMessage = "Network error. This might be a CORS issue. Please check your EmailJS domain settings or contact me directly at stef07codes@gmail.com";
+        } else if (error.message.includes("credentials are not configured")) {
           errorMessage = "Email service is not configured. Please contact me directly at stef07codes@gmail.com";
         } else if (error.message.includes("Invalid template")) {
           errorMessage = "Email template error. Please contact me directly at stef07codes@gmail.com";

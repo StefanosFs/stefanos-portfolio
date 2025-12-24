@@ -4,6 +4,17 @@ import { useEffect } from 'react';
 
 const projects = [
   {
+    title: 'Next.js 15 Full-Stack CRUD',
+    description: 'A high-performance full-stack application featuring server-side rendering, type-safe database operations, and seamless cloud deployment.',
+    image: {
+      url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Next.js+Drizzle+CRUD',
+      alt: 'Full-stack application interface showing user management and database integration'
+    },
+    tags: ['Next.js 15', 'Drizzle ORM', 'Neon Postgres', 'TypeScript', 'Tailwind CSS'],
+    sourceCode: 'https://github.com/StefanosFs/nextjs-drizzle-crud',
+    liveDemo: 'https://nextjs-drizzle-crud.vercel.app',
+  },
+  {
     title: 'GitHub Profile Finder',
     description: 'An application that allows users to search and view GitHub profiles, displaying user information, repositories, and statistics.',
     image: {
@@ -37,17 +48,6 @@ const projects = [
     liveDemo: 'https://meal-api-project-react-js.vercel.app',
   },
   {
-    title: 'Random Password Generator',
-    description: 'A simple tool that generates random passwords of varying lengths and complexity, featuring customizable options and instant clipboard support.',
-    image: {
-      url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Password+Generator',
-      alt: 'Random Password Generator - Simple password generator interface'
-    },
-    tags: ['React.js', 'CSS3', 'JavaScript'],
-    sourceCode: 'https://github.com/StefanosFs/random-password-generator',
-    liveDemo: 'https://random-password-generator-js-eta.vercel.app/'
-  },
-  {
     title: 'Nasa React App',
     description: "An interactive tool that fetches NASA's Image of the Day using their public API, featuring detailed explanations, high-res images, and date-based search.",
     image: {
@@ -59,16 +59,16 @@ const projects = [
     liveDemo: 'https://nasa-react-app-roan.vercel.app/'
   },
   {
-    title: 'Tip Calculator',
-    description: 'A responsive tip calculator that calculates tips based on bill amount and service quality, featuring real-time updates and customizable tip percentages.',
-    image: {
-      url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Tip+Calculator',
-      alt: 'Tip Calculator - Simple tip calculator interface'
-    },
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Modern UI'],
-    sourceCode: 'https://github.com/StefanosFs/Tip-Calculator',
-    liveDemo: 'https://tip-calculator-gd8c.vercel.app/'
+  title: 'Secure Password Generator',
+  description: 'A cybersecurity-focused utility that generates cryptographically strong passwords. Features customizable complexity settings including length, character types, and instant clipboard integration.',
+  image: {
+    url: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Password+Generator',
+    alt: 'Interface for the Password Generator showing sliders and security checkboxes'
   },
+  tags: ['JavaScript', 'React', 'Tailwind CSS', 'Clipboard API', 'Security'],
+  sourceCode: 'https://github.com/StefanosFs/password-generator',
+  liveDemo: 'https://random-password-generator-js-eta.vercel.app/', 
+},
 ];
 
 export default function Projects() {

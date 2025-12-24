@@ -11,7 +11,7 @@ import { useTheme } from "../context/ThemeContext";
 // Try to import from assets first, fallback to public directory
 let logo: string;
 try {
-  logo = new URL("../assets/sf-new.avif", import.meta.url).href;
+  logo = new URL("../assets/sf-logo.avif", import.meta.url).href;
 } catch {
   logo = "/logo.avif"; // Fallback to public directory
 }

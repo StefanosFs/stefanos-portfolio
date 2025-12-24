@@ -117,6 +117,6 @@ MIT
 ## Contact
 
 - **Website**: [https://www.stefanosfessahaie.com](https://www.stefanosfessahaie.com)
-- **Email**: [Your email]
-- **LinkedIn**: [Your LinkedIn]
-- **GitHub**: [Your GitHub]
+- **Email**: 
+- **LinkedIn**: 
+- **GitHub**: 

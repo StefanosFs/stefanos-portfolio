@@ -43,20 +43,18 @@ export default function About() {
               Experience
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              With over two years of software development experience, I have honed my skills through extensive self-study, practical application, and certified coursework, contributing to a variety of projects, including e-commerce platforms
+              I'm a software developer focused on building scalable, user-centered web applications with modern technologies.
               <br />
+              I’m currently preparing for the Azure AI Engineer certification, with a strong interest in AI-integrated systems and practical machine learning applications.
+              <br />
+              My experience spans full-stack development, working on e-commerce platforms and experimental projects that combine clean UI design with solid backend architecture. I’m also the creator of EventIQ (coming soon), along with several other projects in active development,
               such as <a href="https://warmlydecor.store" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">warmlydecor.store</a>
               <br /> 
-              a full-featured modern online store 
-              built with performance and user experience in mind, to
-              enterprise applications.
+              I enjoy working across both frontend and backend systems, with a growing focus on AI-integrated applications.
               <br /> 
-              I'm passionate about crafting elegant digital experiences through clean code and intuitive design. When I step away from the keyboard, you'll find me at the gym, lost in a good book, or experimenting in the kitchen.
+              I'm passionate about writing clean, maintainable code and designing intuitive user experiences that solve real problems.
               <br /> 
-              This website serves as
-              a portfolio of my work and a journal of my career as a developer.
-              Feel free to explore. It will be updated from time to time as I
-              grow my skills and expertise.
+              This portfolio showcases my work and ongoing journey as a developer, with frequent updates as I continue to grow and take on new challenges.
             </p>
           </motion.div>
 

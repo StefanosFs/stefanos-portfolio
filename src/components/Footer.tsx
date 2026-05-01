@@ -12,7 +12,7 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center text-gray-600 dark:text-gray-400">
-          <p>© 2025 Stefanos Fessahaie - Portfolio. All rights reserved.</p>
+          <p>© 2026 Stefanos Fessahaie - Portfolio. All rights reserved.</p>
         </div>
       </div>
     </motion.footer>

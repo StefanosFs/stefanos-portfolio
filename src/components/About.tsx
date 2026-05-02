@@ -43,11 +43,11 @@ export default function About() {
               Experience
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              I'm a software developer focused on building scalable, user-centered web applications with modern technologies.
+              My background includes full-stack development experience building modern web applications, e-commerce platforms, and AI-driven projects using current technologies.
               <br />
               I’m currently preparing for the Azure AI Engineer certification, with a strong interest in AI-integrated systems and practical machine learning applications.
               <br />
-              My experience spans full-stack development, working on e-commerce platforms and experimental projects that combine clean UI design with solid backend architecture. I’m also the creator of EventIQ (coming soon), along with several other projects in active development,
+              I’m also the creator of EventIQ (coming soon), along with several other projects in active development,
               such as <a href="https://warmlydecor.store" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">warmlydecor.store</a>
               <br /> 
               I enjoy working across both frontend and backend systems, with a growing focus on AI-integrated applications.

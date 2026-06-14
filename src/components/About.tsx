@@ -43,18 +43,17 @@ export default function About() {
               Experience
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              My background includes full-stack development experience building modern web applications, e-commerce platforms, and AI-driven projects using current technologies.
-              <br />
-              I’m currently preparing for the Azure AI Engineer certification, with a strong interest in AI-integrated systems and practical machine learning applications.
-              <br />
-              I’m also the creator of EventIQ (coming soon), along with several other projects in active development,
-              such as <a href="https://warmlydecor.store" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">warmlydecor.store</a>
-              <br /> 
-              I enjoy working across both frontend and backend systems, with a growing focus on AI-integrated applications.
-              <br /> 
-              I'm passionate about writing clean, maintainable code and designing intuitive user experiences that solve real problems.
-              <br /> 
-              This portfolio showcases my work and ongoing journey as a developer, with frequent updates as I continue to grow and take on new challenges.
+              My background includes full-stack development experience building modern web applications, e-commerce platforms, and intelligent, data-driven systems.
+            <br />
+            I’m an aspiring Azure AI Engineer dedicated to constructing practical machine learning applications and scalable AI architectures.
+            <br />
+            I’m also actively developing several projects, including <a href="https://warmly-decor.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">warmelydecor.store</a>
+            <br />              
+            I enjoy working across both frontend and backend systems, with an increasing focus on embedding AI solutions into production environments.
+            <br /> 
+            I'm driven by a commitment to writing clean, maintainable code and designing intuitive user experiences that solve real-world problems.
+            <br /> 
+            This portfolio showcases my work and ongoing journey as a developer, with frequent updates as I continue to scale my expertise and tackle new challenges.
             </p>
           </motion.div>
 

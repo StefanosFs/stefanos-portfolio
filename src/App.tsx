@@ -12,7 +12,7 @@ function App() {
   // 2. Dynamically inject your live Vercel AI widget script on load
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://stefanos-ai-agent.vercel.app/';
+    script.src = 'https://stefanos-ai-agent.vercel.app';
     script.async = true;
     document.body.appendChild(script);
 

@@ -75,3 +75,9 @@
 ## Fallback Solution
 
 If EmailJS continues to fail, the form will automatically fall back to opening the user's email client with pre-filled data. This ensures users can always contact you.
+
+
+vercel.json notes
+ /* { "key": "Content-Security-Policy",
+  "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-src 'self' https://stefanos-ai-agent.vercel.app; object-src 'none';"
+}  */

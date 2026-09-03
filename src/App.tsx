@@ -1,4 +1,4 @@
-//import { useEffect } from 'react'; // 1. Import useEffect from React
+import { useEffect } from 'react'; // 1. Import useEffect from React
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -10,7 +10,7 @@ import Services from './components/Services';
 
   function App() {
   // 2. Dynamically inject your live Vercel AI widget script on load
-  /* useEffect(() => {
+  useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://stefanos-ai-agent.vercel.app/widget.js';
     script.async = true;
@@ -20,7 +20,7 @@ import Services from './components/Services';
     return () => {
       document.body.removeChild(script);
     };
-  }, []);  */
+  }, []); 
 
   return (
     <ThemeProvider>

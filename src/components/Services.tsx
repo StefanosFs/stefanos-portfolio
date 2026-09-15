@@ -96,7 +96,7 @@ export default function Services() {
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   {service.description}
                 </p>
-                <div className="text-4xl font-bold text-blue-500 mb-2">
+                <div className="text-4xl font-bold text-transparent bg-clip-text select-none blur-xl bg-blue-500 opacity-40">
                   {service.price}
                 </div>
                 <div className="text-sm text-gray-500 dark:text-gray-400">
@@ -156,3 +156,8 @@ export default function Services() {
 }
 
 
+
+//VISIBLE PRICE TAG LINE 99-101
+{/* <div className="text-4xl font-bold text-blue-500 mb-2">
+  {service.price}
+</div> */}
